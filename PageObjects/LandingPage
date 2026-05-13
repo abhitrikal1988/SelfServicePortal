@@ -1,0 +1,21 @@
+class LandingPage{
+
+    constructor(page){
+        this.page= page;
+        this.zipCode = page.locator('#planZip');
+            }
+
+    async goTo(){
+
+        await this.page.goTo('https://qa-selfserviceportal.nirvanahealth.com/');
+    }
+
+    async SearchbyZip(ZipCode){
+
+        await this.zipCode.fill(ZipCode);
+        await this.zipCode.press('Enter');
+    }
+
+}
+
+export default{LandingPage};
