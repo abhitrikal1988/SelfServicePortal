@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.only('SSP Enrollment', async ({ browser }) => {
+test('SSP Enrollment', async ({ browser }) => {
 
   const context = await browser.newContext();
   const page = await context.newPage();
@@ -51,7 +51,7 @@ test.only('SSP Enrollment', async ({ browser }) => {
   await page.locator('#signatureVerified').check();
   await signature.fill('Abhishek Agarwal');
   // Select the value of Effective Date
-  await page.locator('#ddlEffDate').selectOption({ label: '05/01/2026' });
+  await page.locator('#ddlEffDate').selectOption({ label: '06/01/2026' });
   //Scroll down to Find a PCP button
   const pcpbutton = page.locator('#pcpSearchLink');
   await pcpbutton.scrollIntoViewIfNeeded();
