@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const {POManager} = require('../PageObjects/POManager');
 // test.describe.configure({mode: "parallel"});  // to execute the tests in same file in parallel mode
-test.only('SSP Enrollment', async ({ browser, page }) => {
+test('SSP Enrollment', async ({ browser, page }) => {
 
   const POmanager = new POManager(page);
   const landingPage = POmanager.getLandingPage(); // Navigate to Self-Service Portal
@@ -46,6 +46,7 @@ test.only('SSP Enrollment', async ({ browser, page }) => {
   await next3.click();
 
   // Scroll down to Submit button and click on it.
+  expect 
 
   const Submit = page.getByText('Submit', { exact: true });
   await Submit.scrollIntoViewIfNeeded();
