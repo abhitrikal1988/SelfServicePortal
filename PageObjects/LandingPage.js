@@ -8,7 +8,8 @@ class LandingPage{
         this.Language = page.locator('#languageSelector > option');
         this.header = page.getByText('Find a Medicare Advantage Plan', { exact: true });
         this.sub_header = page.getByText('Easily search and enroll in the plan that is right for you.', { exact: true });
-        this.FindPlanButton = page.getByRole('button', { name: 'Find Plans' });  
+        this.FindPlanButton = page.getByRole('button', { name: 'Find Plans' });
+        this.ClickHere = page.locator('a.plan-find-click-here:visible');
     }
 
     async goTo(){
@@ -21,7 +22,7 @@ class LandingPage{
 
         await this.zipCode.fill(ZipCode);
         await this.zipCode.press('Enter');
-        await this.Plan.click();
+        
         
     }
     async ValidateLanguage(){
@@ -40,6 +41,10 @@ class LandingPage{
         await expect(this.FindPlanButton).toBeDisabled();
     }
     
+   async ClickLink(){
+        await this.ClickHere.click();
+
+    }
 
 
 
