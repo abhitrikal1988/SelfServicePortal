@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, request } from '@playwright/test';
 
 const {POManager} = require('../PageObjects/POManager');
 // test.describe.configure({mode: "parallel"});  // to execute the tests in same file in parallel mode
@@ -49,7 +49,18 @@ test('Clicking Find Plans Button', async ({ browser, page }) => {
   
 })
 
-test.only('Dont know your ZIP code Functionality', async ({ browser, page }) => {
+test.only('Validating FIND Plans API', async ({ browser, page }) => {
+
+  const apicontext = await request.newContext();
+  const response = await apicontext.get('https://ehprd-api.eternalhealth.com/api/enrollment/lookups/GetPlansStatusByZip?businessId=110&zipCode=01772&planYear=2026');
+  expect(response.ok()).toBeTruthy();
+  const responseBody = await response.json();
+  console.log(responseBody);
+  
+  
+})
+
+test('Dont know your ZIP code Functionality', async ({ browser, page }) => {
 
   const POmanager = new POManager(page);
   const landingPage = POmanager.getLandingPage(); // Navigate to Self-Service Portal

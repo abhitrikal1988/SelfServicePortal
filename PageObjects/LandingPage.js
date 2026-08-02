@@ -14,7 +14,7 @@ class LandingPage{
 
     async goTo(){
 
-        await this.page.goto('https://qa-selfserviceportal.nirvanahealth.com/');
+        await this.page.goto('https://selfserviceportal.eternalhealth.com/');
         
         }
 
