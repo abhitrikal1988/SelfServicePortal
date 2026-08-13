@@ -22,13 +22,33 @@ test('Validating FIND PCP API', async ({ browser, page }) => {
   expect(response.ok()).toBeTruthy();
 })
 
-test.only('Validating Provider Search API', async ({ browser, page }) => {
+test('Validating Provider Search API', async ({ browser, page }) => {
 
   const apicontext = await request.newContext();
   const response = await apicontext.post('https://nhconnect.eternalhealth.com/Provider/SearchProviderList', {
-    data: PCPPayload
+    form: PCPPayload
   });
   expect(response.ok()).toBeTruthy();
+  console.log(response.status());
 })
+
+test('Validating Provider Details API', async ({ browser, page }) => {
+
+  const apicontext = await request.newContext();
+  const response = await apicontext.post('https://nhconnect.eternalhealth.com/Provider/ProviderDetails', {
+    form: {
+      pfName : 'John',
+      benefitPlanId : '10454',
+      businessId : '110',
+      enrollmentDate : '2026-09-01T00:00:00',
+      pcpOnly : true
+
+    }
+    });
+  expect(response.ok()).toBeTruthy();
+ 
+ 
+})
+
 
 
