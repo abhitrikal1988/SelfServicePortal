@@ -49,10 +49,10 @@ test('Clicking Find Plans Button', async ({ browser, page }) => {
   
 })
 
-test.only('Validating FIND Plans API', async ({ browser, page }) => {
+test('Validating FIND Plans API',async()=>{
 
-  const apicontext = await request.newContext();
-  const response = await apicontext.get('https://ehprd-api.eternalhealth.com/api/enrollment/lookups/GetPlansStatusByZip?businessId=110&zipCode=01772&planYear=2026');
+  const apiContext = await request.newContext();
+  const response = await apiContext.get('https://ehprd-api.eternalhealth.com/api/enrollment/lookups/GetPlansStatusByZip?businessId=110&zipCode=01772&planYear=2026');
   expect(response.ok()).toBeTruthy();
   const responseBody = await response.json();
   console.log(responseBody);
