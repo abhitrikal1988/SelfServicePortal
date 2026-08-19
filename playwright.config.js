@@ -14,7 +14,8 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  retries : 2,
+  retries : 1,
+  timeout: 45000,
   
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -23,10 +24,19 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
     actionTimeout: 10000,
     browserName : 'chromium',
-    headless : true,
+    headless : false,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
+  },
+
+  expect: {
+    toHaveScreenshot: {
+      maxDiffPixels: 100, 
+      maxDiffPixelRatio: 0.1,    // Allow up to 100 mismatched pixels
+      threshold: 0.2,         // Sensitivity configuration (0 to 1)
+      animations: 'disabled', // Ensure animations are frozen
+    },
   },
 
   

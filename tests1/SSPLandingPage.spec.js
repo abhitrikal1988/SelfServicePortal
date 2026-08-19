@@ -1,6 +1,6 @@
 import { test, expect, request } from '@playwright/test';
 
-const {POManager} = require('../PageObjects/POManager');
+const { POManager } = require('../PageObjects/POManager');
 // test.describe.configure({mode: "parallel"});  // to execute the tests in same file in parallel mode
 test('SSP Landing Page Language Options', async ({ browser, page }) => {
 
@@ -33,9 +33,9 @@ test('Find Plans Button after entering 4 digits', async ({ browser, page }) => {
   const landingPage = POmanager.getLandingPage(); // Navigate to Self-Service Portal
   await landingPage.goTo();
   await landingPage.zipCode.fill('1234');
- // await page.screenshot({ path: 'FindPlansisDisabled1.png', fullPage: true });
+  // await page.screenshot({ path: 'FindPlansisDisabled1.png', fullPage: true });
   await landingPage.FindPlansisDisabled();
-  
+
 })
 
 test('Clicking Find Plans Button', async ({ browser, page }) => {
@@ -45,19 +45,19 @@ test('Clicking Find Plans Button', async ({ browser, page }) => {
   await landingPage.goTo();
   await landingPage.SearchbyZip('01772');
   await page.screenshot({ path: 'Plans.png', fullPage: true });
-  await expect (landingPage.Plan).toBeVisible();
-  
+  await expect(landingPage.Plan).toBeVisible();
+
 })
 
-test('Validating FIND Plans API',async()=>{
+test('Validating FIND Plans API', async () => {
 
   const apiContext = await request.newContext();
   const response = await apiContext.get('https://ehprd-api.eternalhealth.com/api/enrollment/lookups/GetPlansStatusByZip?businessId=110&zipCode=01772&planYear=2026');
   expect(response.ok()).toBeTruthy();
   const responseBody = await response.json();
   console.log(responseBody);
-  
-  
+
+
 })
 
 test('Dont know your ZIP code Functionality', async ({ browser, page }) => {
@@ -72,7 +72,7 @@ test('Dont know your ZIP code Functionality', async ({ browser, page }) => {
   await page.waitForTimeout(1000);
   await page.locator('#acceptBtn').click();
   await page.getByRole('button', { name: 'Find Plans' }).click();
-    
+
 })
 
 

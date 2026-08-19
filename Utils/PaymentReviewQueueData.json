@@ -1,0 +1,14 @@
+[
+    {
+        "BaseURL": "https://qa-accounts.nirvanahealth.com/Account/TermsOfUse",
+        "username": "Abhishek.Agarwal@nirvanahealth.com",
+        "password": "Maldives@2026",
+        "ENRurl": "https://qa1.nirvanahealth.com/Enrollment/landing"
+        
+    },
+
+    {
+        "PaymentID": "1284848",
+        "TransactionID": "nH1284848"
+    }
+]

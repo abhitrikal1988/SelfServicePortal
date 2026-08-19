@@ -1,0 +1,19 @@
+[
+    {
+        "BaseURL": "https://qa-accounts.nirvanahealth.com/Account/TermsOfUse",
+        "username": "Abhishek.Agarwal@nirvanahealth.com",
+        "password": "Maldives@2026",
+        "ENRurl": "https://qa1.nirvanahealth.com/Enrollment/landing"
+        
+    },
+
+    {
+        "AppliedPayment": "1284357",
+        "ExceptionPayment": "1284361",
+        "NotProcessedPayment": "1284360",
+        "RejectedPayment": "1284362",
+        "MBI": "4GM3TE4YQ70",
+        "MemberID": "T9808054251",
+        "TransactionID": "nH1269750"
+    }
+]
