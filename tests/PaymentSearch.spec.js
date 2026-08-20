@@ -21,7 +21,7 @@ test.beforeAll(async ({ browser }) => {
 
 })
 
-test.only('Validating Payment Search Page is loading', async () => {
+test('Validating Payment Search Page is loading', async () => {
 
     const page = await webContext.newPage();
     await page.goto(dataset[0].ENRurl);
@@ -41,6 +41,7 @@ test('Validating various tabs on Payment Search Screen', async () => {
     await page.getByRole('tab', { name: 'Applied Payments' }).click();
     await expect(page.getByRole('tab', { name: 'Applied Payments' })).toBeVisible();
     await page.getByRole('tab', { name: 'Exceptions' }).click();
+    await page.pause();
     await expect(page.getByRole('tab', { name: 'Exceptions' })).toBeVisible();
     await page.getByRole('tab', { name: 'Not Processed' }).click();
     await expect(page.getByRole('tab', { name: 'Not Processed' })).toBeVisible();

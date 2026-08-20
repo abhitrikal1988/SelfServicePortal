@@ -78,7 +78,7 @@ test('Validating Payment search by Transaction ID on Payment Review Screen', asy
 
 })
 
-test.only('Validating Exception type dropdown', async () => {
+test('Validating Exception type dropdown', async () => {
 
     const page = await webContext.newPage();
     await page.goto(dataset[0].ENRurl);
