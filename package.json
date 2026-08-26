@@ -11,9 +11,12 @@
     "@azure/identity": "^4.13.1",
     "@azure/playwright": "^1.1.6",
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.5.0"
+    "@types/node": "^25.5.0",
+    "allure-playwright": "^3.10.2"
   },
   "dependencies": {
+    "exceljs": "^4.4.0",
+    "oracledb": "^7.0.1",
     "prettier": "^3.9.6"
   }
 }

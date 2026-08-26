@@ -1,0 +1,40 @@
+[
+    {
+        "tags": "Credentials",
+        "BaseURL": "https://qa-accounts.nirvanahealth.com/Account/TermsOfUse",
+        "username": "Abhishek.Agarwal@nirvanahealth.com",
+        "password": "Maldives@2026",
+        "ENRurl": "https://qa1.nirvanahealth.com/Enrollment/landing"
+        
+    },
+
+    {
+        "tags": "BrokerPortalData",
+        "EffectiveDate": "09/01/2026",
+        "ZipCode": "27105",
+        "PlanID": "H9808004000",
+        "ApplicationReceivedDate": "2026-08-26",
+        "FirstName": "Abhishek",
+        "LastName": "Agarwal",
+        "DateofBirth": "1988-02-14",
+        "Gender":"Male",
+        "MedicareNumber":"6Y88TE4DV51",
+        "Signature": "Abhishek"
+
+    },
+
+    {
+        "tags": "Self-Portal Data",
+        "EffectiveDate": "09/01/2026",
+        "ZipCode": "27105",
+        "PlanID": "H9808004000",
+        "ApplicationReceivedDate": "2026-08-26",
+        "FirstName": "Abhishek",
+        "LastName": "Agarwal",
+        "DateofBirth": "1988-02-14",
+        "Gender":"Male",
+        "MedicareNumber":"6Y88TE4DV51",
+        "Signature": "Abhishek"
+
+    }
+]

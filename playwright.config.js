@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -17,7 +18,11 @@ export default defineConfig({
   retries : 1,
   timeout: 45000,
   
-  reporter: 'html',
+  reporter: 
+  [
+    ['line'], // Optional: keeps console output clean
+    ['allure-playwright', { outputFolder: 'allure-results' }] //npx allure serve allure-results
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */

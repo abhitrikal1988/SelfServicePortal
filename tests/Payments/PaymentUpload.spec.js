@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const dataset = JSON.parse(JSON.stringify(require("../utils/PaymentReviewQueueData.json")));
+const dataset = JSON.parse(JSON.stringify(require("../../Utils/PaymentData.json")));
 let webContext;
 
 test.beforeAll(async ({ browser }) => {
@@ -10,6 +10,7 @@ test.beforeAll(async ({ browser }) => {
     await page.getByRole('textbox', { name: 'someone@example.com' }).click();
     await page.getByRole('textbox', { name: 'someone@example.com' }).fill(dataset[0].username);
     await page.getByRole('button', { name: 'Next' }).click();
+    await page.waitForTimeout(2000);
     await page.locator('#i0118').fill(dataset[0].password);
     await page.getByRole('button', { name: 'Sign in' }).click();
     await page.getByRole('link', { name: ' HTA Medical Benefits (QA1)' }).click();
@@ -29,7 +30,7 @@ test('Validation message on loading Blank Payment file', async () => {
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/BlankFile.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/BlankFile.xlsx');
     await expect(page.getByRole('gridcell', { name: 'Blank File Loaded' }).first()).toBeVisible({ timeout: 10000 });
     await expect(page.locator('td').filter({ hasText: 'Errored' }).first()).toBeVisible();   
 })
@@ -44,7 +45,7 @@ test('Validation message on loading Invalid Format Payment file', async () => {
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/Invalid Format.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/Invalid Format.xlsx');
     await expect(page.getByRole('gridcell', { name: 'Invalid File Format/Structure' }).first()).toBeVisible({ timeout: 10000 });
     await expect(page.locator('td').filter({ hasText: 'Errored' }).first()).toBeVisible();   
 })
@@ -59,7 +60,7 @@ test('Validation message on loading >10MB Payment file', async () => {
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/BigFile.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/BigFile.xlsx');
     await expect(page.getByRole('gridcell', { name: 'File size exceeds 10MB limit' }).first()).toBeVisible();
     await expect(page.locator('td').filter({ hasText: 'Errored' }).first()).toBeVisible();   
 })
@@ -74,7 +75,7 @@ test('Validation message on loading Payment file with transaction type missing',
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/transactionType_missing.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/transactionType_missing.xlsx');
     await expect(page.getByRole('gridcell', { name: 'Successful File Validation' }).first()).toBeVisible({ timeout: 20000 });
     await expect(page.locator('td').filter({ hasText: 'Rejected' }).first()).toBeVisible();   
     await expect(page.locator('td').filter({ hasText: 'Failed Record Validation' }).first()).toBeVisible();
@@ -94,7 +95,7 @@ test('Validation message on loading Payment file with Payment Source missing', a
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/PaymentSource_missing.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/PaymentSource_missing.xlsx');
     await expect(page.getByRole('gridcell', { name: 'Successful File Validation' }).first()).toBeVisible({ timeout: 20000 });
     await expect(page.locator('td').filter({ hasText: 'Rejected' }).first()).toBeVisible();   
     await expect(page.locator('td').filter({ hasText: 'Failed Record Validation' }).first()).toBeVisible();
@@ -114,7 +115,7 @@ test('Validation message on loading Payment file with Billee missing', async () 
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/Billee_missing.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/Billee_missing.xlsx');
     await expect(page.getByRole('gridcell', { name: 'Successful File Validation' }).first()).toBeVisible({ timeout: 20000 });
     await expect(page.locator('td').filter({ hasText: 'Rejected' }).first()).toBeVisible();   
     await expect(page.locator('td').filter({ hasText: 'Failed Record Validation' }).first()).toBeVisible();
@@ -134,7 +135,7 @@ test('Validation message on loading Payment file with Payment Amount missing', a
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/PaymentAmount_missing.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/PaymentAmount_missing.xlsx');
     await expect(page.getByRole('gridcell', { name: 'Successful File Validation' }).first()).toBeVisible({ timeout: 20000 });
     await expect(page.locator('td').filter({ hasText: 'Rejected' }).first()).toBeVisible();   
     await expect(page.locator('td').filter({ hasText: 'Failed Record Validation' }).first()).toBeVisible();
@@ -155,7 +156,7 @@ test('Validation message on loading Payment file with InvalidPayment Amount', as
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/PaymentAmount_Invalid.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/PaymentAmount_Invalid.xlsx');
     await expect(page.getByRole('gridcell', { name: 'Successful File Validation' }).first()).toBeVisible({ timeout: 20000 });
     await expect(page.locator('td').filter({ hasText: 'Rejected' }).first()).toBeVisible();   
     await expect(page.locator('td').filter({ hasText: 'Failed Record Validation' }).first()).toBeVisible();
@@ -176,7 +177,7 @@ test('Validation message on loading Payment file with Payment Portion missing', 
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/PaymentPortion_missing.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/PaymentPortion_missing.xlsx');
     await expect(page.getByRole('gridcell', { name: 'Successful File Validation' }).first()).toBeVisible({ timeout: 20000 });
     await expect(page.locator('td').filter({ hasText: 'Rejected' }).first()).toBeVisible();   
     await expect(page.locator('td').filter({ hasText: 'Failed Record Validation' }).first()).toBeVisible();
@@ -187,7 +188,7 @@ test('Validation message on loading Payment file with Payment Portion missing', 
 
 })
 
-test.only('Uploading a Payment Record Successfully', async () => {
+test('Uploading a Payment Record Successfully', async () => {
     test.setTimeout(120000); 
     const page = await webContext.newPage();
     await page.goto(dataset[0].ENRurl);
@@ -197,7 +198,7 @@ test.only('Uploading a Payment Record Successfully', async () => {
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.getByRole('button', { name: 'Select file' }).click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles('tests/PaymentFiles/PaymentRecord_Valid.xlsx');
+    await fileChooser.setFiles('tests/Payments/PaymentFiles/PaymentRecord_Valid.xlsx');
     await expect(page.getByRole('gridcell', { name: 'Successful File Validation' }).first()).toBeVisible({ timeout: 20000 });
     await expect(page.locator('td').filter({ hasText: 'Processed' }).first()).toBeVisible();   
     await expect(page.locator('td').filter({ hasText: 'Successful Record Validation' }).first()).toBeVisible();
