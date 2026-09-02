@@ -9,4 +9,5 @@ node_modules/
 /allure-results/
 /Utils/PaymentData.json
 /tests/PaymentFiles
+/.env
 

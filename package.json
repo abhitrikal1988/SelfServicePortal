@@ -12,7 +12,8 @@
     "@azure/playwright": "^1.1.6",
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.5.0",
-    "allure-playwright": "^3.10.2"
+    "allure-playwright": "^3.10.2",
+    "dotenv": "^17.4.2"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
