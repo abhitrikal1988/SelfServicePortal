@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-16T14:36:14.146Z",
+  "dryRun": true,
+  "applied": 2,
+  "skipped": 0,
+  "fixes": [
+    {
+      "file": "tests\\MemberAccount\\LandingPage.spec.js",
+      "line": 33,
+      "before": ".getByText('View', { exact: true })",
+      "after": ".getByRole(\"gridcell\", { name: \"View\" })",
+      "applied": true,
+      "needsReview": false
+    },
+    {
+      "file": "tests\\MemberAccount\\LandingPage.spec.js",
+      "line": 29,
+      "before": ".getByRole('textbox', { name: 'Medicare' })",
+      "after": ".getByRole(\"textbox\", { name: \"MBI (Min Length 6)\" })",
+      "applied": true,
+      "needsReview": false
+    }
+  ],
+  "affectedTests": [
+    "tests\\MemberAccount\\LandingPage.spec.js:22"
+  ]
+}

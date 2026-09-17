@@ -1,0 +1,469 @@
+[
+  {
+    "id": "RUN-1789569185146",
+    "timestamp": "2026-09-16T14:33:05.146Z",
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "passRate": 100,
+    "durationMs": 36929,
+    "status": "passed",
+    "tests": [
+      {
+        "file": "tests/MemberAccount/LandingPage.spec.js",
+        "line": 22,
+        "title": " › MemberAccount/LandingPage.spec.js › Validating Billing Payment header on Payments tab",
+        "projectName": "",
+        "status": "passed",
+        "expectedStatus": "passed",
+        "duration": 25566,
+        "retry": 0,
+        "workerIndex": 0,
+        "flaky": false,
+        "tags": [],
+        "annotations": [
+          {
+            "type": "self-healed",
+            "description": "Recovered using a previously-confirmed selector (getByRole(\"textbox\", { name: \"MBI (Min Length 6)\" })) — no AI call needed."
+          },
+          {
+            "type": "self-healed",
+            "description": "Recovered using a previously-confirmed selector (getByRole(\"gridcell\", { name: \"View\" })) — no AI call needed."
+          }
+        ],
+        "stdout": [
+          "[self-healer] tests\\MemberAccount\\LandingPage.spec.js:29 — locator.click \"MBI field\" -> HEALED [provider=cache, vision=no, actionRecovery=no, suggested=\"getByRole(\"textbox\", { name: \"MBI (Min Length 6)\" })\"] — locator.click: Timeout 20000ms exceeded.\n",
+          "[self-healer] tests\\MemberAccount\\LandingPage.spec.js:33 — locator.click \"text \"View\"\" -> HEALED [provider=cache, vision=no, actionRecovery=no, suggested=\"getByRole(\"gridcell\", { name: \"View\" })\"] — locator.click: Error: strict mode violation: getByText('View', { exact: true }) resolved to 10 elements:\n"
+        ],
+        "stderr": [],
+        "attachments": [
+          {
+            "name": "self-healing-click",
+            "contentType": "application/json",
+            "skipped": false
+          },
+          {
+            "name": "self-healing-click",
+            "contentType": "application/json",
+            "skipped": false
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "skipped": true
+          }
+        ],
+        "steps": [
+          {
+            "title": "Before Hooks",
+            "category": "hook",
+            "duration": 8963,
+            "status": "passed",
+            "depth": 0
+          },
+          {
+            "title": "beforeAll hook",
+            "category": "hook",
+            "duration": 8159,
+            "status": "passed",
+            "depth": 1,
+            "location": "tests/MemberAccount/LandingPage.spec.js:5"
+          },
+          {
+            "title": "Fixture \"browser\"",
+            "category": "fixture",
+            "duration": 1305,
+            "status": "passed",
+            "depth": 2
+          },
+          {
+            "title": "Launch browser",
+            "category": "pw:api",
+            "duration": 1302,
+            "status": "passed",
+            "depth": 3
+          },
+          {
+            "title": "Fixture \"browser\"",
+            "category": "fixture",
+            "duration": 0,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/index.ts:14"
+          },
+          {
+            "title": "Create context",
+            "category": "pw:api",
+            "duration": 14,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:691"
+          },
+          {
+            "title": "Create page",
+            "category": "pw:api",
+            "duration": 373,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:633"
+          },
+          {
+            "title": "Navigate",
+            "category": "pw:api",
+            "duration": 588,
+            "status": "passed",
+            "depth": 2,
+            "location": "tests/MemberAccount/LandingPage.spec.js:8"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 365,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('button', { name: 'Agree', exact: true })"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 818,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('textbox', { name: 'someone@example.com' })"
+          },
+          {
+            "title": "Fill \"Abhishek.Agarwal@nirvanahealth.com\"",
+            "category": "pw:api",
+            "duration": 22,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('textbox', { name: 'someone@example.com' })"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 77,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('button', { name: 'Next' })"
+          },
+          {
+            "title": "Wait for timeout",
+            "category": "pw:api",
+            "duration": 2015,
+            "status": "passed",
+            "depth": 2,
+            "location": "tests/MemberAccount/LandingPage.spec.js:13"
+          },
+          {
+            "title": "Fill \"Maldives@2026\"",
+            "category": "pw:api",
+            "duration": 20,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "locator('#i0118')"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 467,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('button', { name: 'Sign in' })"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 662,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('link', { name: ' HTA Medical Benefits (QA1)' })"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 331,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('link', { name: ' Enrollment 2.0' })"
+          },
+          {
+            "title": "Create context",
+            "category": "pw:api",
+            "duration": 16,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:691"
+          },
+          {
+            "title": "Fixture \"context\"",
+            "category": "fixture",
+            "duration": 23,
+            "status": "passed",
+            "depth": 1
+          },
+          {
+            "title": "Create context",
+            "category": "pw:api",
+            "duration": 16,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:691"
+          },
+          {
+            "title": "Fixture \"context\"",
+            "category": "fixture",
+            "duration": 0,
+            "status": "passed",
+            "depth": 1,
+            "location": "node_modules/tamash-playwright/src/bindings/index.ts:14"
+          },
+          {
+            "title": "Fixture \"page\"",
+            "category": "fixture",
+            "duration": 265,
+            "status": "passed",
+            "depth": 1
+          },
+          {
+            "title": "Create page",
+            "category": "pw:api",
+            "duration": 263,
+            "status": "passed",
+            "depth": 2,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:633"
+          },
+          {
+            "title": "Fixture \"page\"",
+            "category": "fixture",
+            "duration": 0,
+            "status": "passed",
+            "depth": 1,
+            "location": "node_modules/tamash-playwright/src/bindings/index.ts:14"
+          },
+          {
+            "title": "Fixture \"_failureAnalysis\"",
+            "category": "fixture",
+            "duration": 0,
+            "status": "passed",
+            "depth": 1,
+            "location": "node_modules/tamash-playwright/src/bindings/index.ts:14"
+          },
+          {
+            "title": "Create page",
+            "category": "pw:api",
+            "duration": 418,
+            "status": "passed",
+            "depth": 0,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:633"
+          },
+          {
+            "title": "Navigate",
+            "category": "pw:api",
+            "duration": 2262,
+            "status": "passed",
+            "depth": 0,
+            "location": "tests/MemberAccount/LandingPage.spec.js:26"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 1688,
+            "status": "passed",
+            "depth": 0,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('button', { name: 'Health Team Advantage Medicare' })"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 178,
+            "status": "passed",
+            "depth": 0,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "locator('a').filter({ hasText: 'Member Account' }).first()"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 20030,
+            "status": "failed",
+            "depth": 0,
+            "error": "TimeoutError: locator.click: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByRole('textbox', { name: 'Medicare' })\n",
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "MBI field"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 72,
+            "status": "passed",
+            "depth": 0,
+            "location": "node_modules/tamash-playwright/src/healer/replay-action.ts:21",
+            "locator": "getByRole('textbox', { name: /MBI \\(Min Length 6\\)/i })"
+          },
+          {
+            "title": "Fill \"3Q96TE3EJ70\"",
+            "category": "pw:api",
+            "duration": 31,
+            "status": "passed",
+            "depth": 0,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('textbox', { name: 'MBI' })"
+          },
+          {
+            "title": "Expect \"toBeEnabled\"",
+            "category": "expect",
+            "duration": 22,
+            "status": "passed",
+            "depth": 0,
+            "location": "tests/MemberAccount/LandingPage.spec.js:31",
+            "locator": "getByRole('button', { name: 'Search' })"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 115,
+            "status": "passed",
+            "depth": 0,
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByRole('button', { name: 'Search' })"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 92,
+            "status": "failed",
+            "depth": 0,
+            "error": "Error: locator.click: Error: strict mode violation: getByText('View', { exact: true }) resolved to 10 elements:\n    1) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View').nth(2)\n    2) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View').nth(3)\n    3) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View').nth(4)\n    4) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View').nth(5)\n    5) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View', { exact: true }).nth(4)\n    6) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View', { exact: true }).nth(5)\n    7) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka locator('tr:nth-child(7) > td > .link-primary')\n    8) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka locator('tr:nth-child(8) > td > .link-primary')\n    9) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka locator('tr:nth-child(9) > td > .link-primary')\n    10) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka locator('tr:nth-child(10) > td > .link-primary')\n\nCall log:\n  - waiting for getByText('View', { exact: true })\n",
+            "location": "node_modules/tamash-playwright/src/bindings/locator.binding.ts:490",
+            "locator": "getByText('View', { exact: true })"
+          },
+          {
+            "title": "Click",
+            "category": "pw:api",
+            "duration": 267,
+            "status": "passed",
+            "depth": 0,
+            "location": "node_modules/tamash-playwright/src/healer/replay-action.ts:21",
+            "locator": "getByRole('gridcell', { name: /View/i })"
+          },
+          {
+            "title": "After Hooks",
+            "category": "hook",
+            "duration": 433,
+            "status": "passed",
+            "depth": 0
+          },
+          {
+            "title": "Fixture \"_failureAnalysis\"",
+            "category": "fixture",
+            "duration": 1,
+            "status": "passed",
+            "depth": 1,
+            "location": "node_modules/tamash-playwright/src/bindings/index.ts:14"
+          },
+          {
+            "title": "Fixture \"page\"",
+            "category": "fixture",
+            "duration": 0,
+            "status": "passed",
+            "depth": 1,
+            "location": "node_modules/tamash-playwright/src/bindings/index.ts:14"
+          },
+          {
+            "title": "Fixture \"page\"",
+            "category": "fixture",
+            "duration": 0,
+            "status": "passed",
+            "depth": 1
+          },
+          {
+            "title": "Fixture \"context\"",
+            "category": "fixture",
+            "duration": 0,
+            "status": "passed",
+            "depth": 1,
+            "location": "node_modules/tamash-playwright/src/bindings/index.ts:14"
+          },
+          {
+            "title": "Fixture \"context\"",
+            "category": "fixture",
+            "duration": 48,
+            "status": "passed",
+            "depth": 1
+          },
+          {
+            "title": "Close context",
+            "category": "pw:api",
+            "duration": 11,
+            "status": "passed",
+            "depth": 2
+          }
+        ],
+        "heals": [
+          {
+            "action": "click",
+            "kind": "locator",
+            "description": "MBI field",
+            "provider": "cache",
+            "healed": true,
+            "warning": "Recovered using a previously-confirmed selector (getByRole(\"textbox\", { name: \"MBI (Min Length 6)\" })) — no AI call needed.",
+            "reason": "locator.click: Timeout 20000ms exceeded.\nCall log:\n  - waiting for getByRole('textbox', { name: 'Medicare' })\n",
+            "suggestedSelector": "getByRole(\"textbox\", { name: \"MBI (Min Length 6)\" })",
+            "usedVision": false,
+            "usedActionRecovery": false,
+            "sourceLocation": "tests\\MemberAccount\\LandingPage.spec.js:29",
+            "initialSelector": "getByRole('textbox', { name: 'MBI (Min Length 6)' })",
+            "needsReview": false,
+            "attempts": [
+              {
+                "method": "cache",
+                "succeeded": true,
+                "suggestedSelector": "getByRole(\"textbox\", { name: \"MBI (Min Length 6)\" })"
+              }
+            ]
+          },
+          {
+            "action": "click",
+            "kind": "locator",
+            "description": "text \"View\"",
+            "provider": "cache",
+            "healed": true,
+            "warning": "Recovered using a previously-confirmed selector (getByRole(\"gridcell\", { name: \"View\" })) — no AI call needed.",
+            "reason": "locator.click: Error: strict mode violation: getByText('View', { exact: true }) resolved to 10 elements:\n    1) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View').nth(2)\n    2) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View').nth(3)\n    3) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View').nth(4)\n    4) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View').nth(5)\n    5) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View', { exact: true }).nth(4)\n    6) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka getByText('View', { exact: true }).nth(5)\n    7) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka locator('tr:nth-child(7) > td > .link-primary')\n    8) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka locator('tr:nth-child(8) > td > .link-primary')\n    9) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka locator('tr:nth-child(9) > td > .link-primary')\n    10) <a _ngcontent-uar-c499=\"\" class=\"link-primary underline ng-star-inserted\">View</a> aka locator('tr:nth-child(10) > td > .link-primary')\n\nCall log:\n  - waiting for getByText('View', { exact: true })\n",
+            "suggestedSelector": "getByRole(\"gridcell\", { name: \"View\" })",
+            "usedVision": false,
+            "usedActionRecovery": false,
+            "sourceLocation": "tests\\MemberAccount\\LandingPage.spec.js:33",
+            "initialSelector": "getByRole('gridcell', { name: 'View' })",
+            "needsReview": false,
+            "attempts": [
+              {
+                "method": "cache",
+                "succeeded": true,
+                "suggestedSelector": "getByRole(\"gridcell\", { name: \"View\" })"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "healAttempts": 2,
+    "healSucceeded": 2,
+    "healedTestsCount": 1,
+    "healedElementsCount": 2,
+    "healTokens": 0,
+    "healNeedsReviewCount": 0
+  }
+]

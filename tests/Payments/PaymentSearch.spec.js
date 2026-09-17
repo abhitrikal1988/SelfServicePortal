@@ -1,9 +1,12 @@
-const { test, expect } = require('@playwright/test');
+const { test,expect} = require('tamash-playwright');
+//const {expect} = require('@playwright/test');
+
 const dataset =  JSON.parse(JSON.stringify(require("../../utils/PaymentData.json")));
 let webContext;
 
 test.beforeAll(async ({ browser }) => {
     const context = await browser.newContext();
+    //const page = await bindPageActions(await context.newPage());
     const page = await context.newPage();
     await page.goto(dataset[0].BaseURL);
     await page.getByRole('button', { name: 'Agree', exact: true }).click();
@@ -12,7 +15,7 @@ test.beforeAll(async ({ browser }) => {
     await page.getByRole('button', { name: 'Next' }).click();
     await page.waitForTimeout(2000);
     await page.locator('#i0118').fill(dataset[0].password);
-    await page.getByRole('button', { name: 'Sign in' }).click();
+    await page.getByRole('button', { name: 'Sign In' }).describe('Signin button').click();
     await page.getByRole('link', { name: ' HTA Medical Benefits (QA1)' }).click();
     await page.getByRole('link', { name: ' Enrollment 2.0' }).click();
     await context.storageState({ path: 'state.json' });
@@ -20,9 +23,10 @@ test.beforeAll(async ({ browser }) => {
 
 })
 
-test('Validating various tabs on Payment Search Screen', async () => {
+test.only('Validating various tabs on Payment Search Screen', async () => {
     
     const page = await webContext.newPage();
+    //const page = await bindPageActions(page);
     await page.goto(dataset[0].ENRurl);
     await page.getByRole('button', { name: 'Health Team Advantage Medicare' }).click();
     await page.getByRole('link', { name: ' Payments' }).click();
@@ -31,7 +35,7 @@ test('Validating various tabs on Payment Search Screen', async () => {
     await expect(page.getByRole('tab', { name: 'Applied Payments' })).toBeVisible();
     await page.getByRole('tab', { name: 'Exceptions' }).click();
     await expect(page.getByRole('tab', { name: 'Exceptions' })).toBeVisible();
-    await page.getByRole('tab', { name: 'Not Processed' }).click();
+    await page.getByRole('tab', { name: 'Not Processed' }).describe("not processed tab").click()
     await expect(page.getByRole('tab', { name: 'Not Processed' })).toBeVisible();
     await page.getByRole('tab', { name: 'Rejected' }).click();
     await expect(page.getByRole('tab', { name: 'Rejected' })).toBeVisible();
